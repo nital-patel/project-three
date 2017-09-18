@@ -20,12 +20,14 @@ class FlightSearch extends Component{
         const target = event.target;
         const value = target.value;
         const name = target.name;  
-        if(value){
+        if(this.state.name){
             this.setState({
-                [name]:value
+                [name]:false
             })
         }else{
-            return console.log(this.state)
+            this.setState({
+                [name]:true
+            })
         }
     }
     render(){
@@ -71,7 +73,7 @@ class FlightSearch extends Component{
 
                     <div className='searchSection'>
                         <span>Would you like to book a Hotel?
-                        <input name='hotelSearchDisplay' onChange={this.checkHandler} type='checkbox'/>
+                        <input name='hotelSearchDisplay' value={this.state.hotelSearchDisplay} onChange={this.checkHandler} type='checkbox'/>
                         </span>
                     </div>
                     {this.displayHotel()}
