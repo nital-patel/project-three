@@ -21,15 +21,10 @@
     "eject": "react-scripts eject"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-<<<<<<< HEAD
   "main": "index.js",
   "devDependencies": {
     "nodemon": "^1.12.1"
   },
-=======
-  "main": "App.js",
-  "devDependencies": {},
->>>>>>> d518d0eb35596368f1fc229b2f1da853e0d83593
   "repository": {
     "type": "git",
     "url": "https://git.generalassemb.ly/kevinblackwell/project-three/tree/dev"
