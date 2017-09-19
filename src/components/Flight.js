@@ -30,7 +30,7 @@ class Flight extends Component{
                 </div>
                 <div className='fareSeat'>
                 <p> Total Fare {this.fareConvert()}</p>
-                <p>Seats Available</p>
+                <p>Seats Available {this.props.flightData.onwardflights[0].seatsavailable}</p>
                 </div>
                 {/* Amisha, we need an action here for the route */}
                 <form method='POST' action=''>
@@ -42,6 +42,7 @@ class Flight extends Component{
                     <input type='hidden' name='arrtime' value={this.props.flightData.onwardflights[0].arrtime} />
                     <input type='hidden' name='duration' value={this.props.flightData.onwardflights[0].duration} />
                     <input type='hidden' name='totalfare' value={this.fareConvert()} />
+                    <input type='hidden' name='seats' value={this.props.flightData.onwardflights[0].seatsavailable} />
                 <button type='submit'>Add Flight</button>
                 </form>
             </div>

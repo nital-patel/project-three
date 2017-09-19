@@ -10,7 +10,7 @@ class Register extends Component{
     render(){
         return(
             <div className='login item section'>
-                <h2>Login</h2>
+                <h2>Register</h2>
                 {/* nital, put in an action that is the route you want to call the auth methods on */}
                 <form method='POST' action=''>
                     <input name='username' placeholder='username'></input>
