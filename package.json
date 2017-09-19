@@ -18,7 +18,6 @@
     "eject": "react-scripts eject"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-<<<<<<< HEAD
   "main": "index.js",
   "devDependencies": {},
   "repository": {
@@ -26,7 +25,6 @@
     "url": "https://git.generalassemb.ly/Amipatel2410/project-three.git"
   },
   "author": "Amisha Patel",
-=======
   "main": "App.js",
   "devDependencies": {},
   "repository": {
@@ -34,6 +32,5 @@
     "url": "https://git.generalassemb.ly/kevinblackwell/project-three/tree/dev"
   },
   "author": "Kevin Blackwell",
->>>>>>> 764f9835edb3f79a48082e277c6df48c622c13b1
   "license": "ISC"
 }
