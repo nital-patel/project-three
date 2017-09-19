@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4c53b2eedbf8cd294e4219f89e57cae7962b3374
 import React, { Component } from 'react';
 
 class Flight extends Component {
@@ -31,6 +34,7 @@ class Flight extends Component {
           <p>Seats Available</p>
         </div>
       </div>
+<<<<<<< HEAD
     );
   }
 }
@@ -39,4 +43,24 @@ class Flight extends Component {
 
 
 
+=======
+      </div>
+            {/* Amisha, we need an action here for the route */}
+            <form method='POST' action=''>
+                <input type='hidden' name='airline' value={this.props.flightData.onwardflights[0].airline} />
+                <input type='hidden' name='flightno' value={this.props.flightData.onwardflights[0].flightcode} />
+                <input type='hidden' name='origin' value={this.props.flightData.onwardflights[0].origin}/>
+                <input type='hidden' name='destination' value={this.props.flightData.onwardflights[0].destination} />
+                <input type='hidden' name='depa_time' value={this.props.flightData.onwardflights[0].deptime} />
+                <input type='hidden' name='arrtime' value={this.props.flightData.onwardflights[0].arrtime} />
+                <input type='hidden' name='duration' value={this.props.flightData.onwardflights[0].duration} />
+                <input type='hidden' name='totalfare' value={this.fareConvert()} />
+                <input type='hidden' name='seats' value={this.props.flightData.onwardflights[0].seatsavailable} />
+            <button type='submit'>Add Flight</button>
+            </form>
+        </div>
+    )
+    }
+}
+>>>>>>> 4c53b2eedbf8cd294e4219f89e57cae7962b3374
 export default Flight;

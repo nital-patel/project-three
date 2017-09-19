@@ -4,6 +4,7 @@ import './App.css';
 import FlightSearch from './components/FlightSearch';
 import FlightDisplay from './components/FlightDisplay';
 import Login from './components/auth/Login';
+import Register from './components/auth/Register'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <FlightSearch />
         <FlightDisplay />
         <Login />
+        <Register />
       </div>
     );
   }
