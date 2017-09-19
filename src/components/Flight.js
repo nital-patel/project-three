@@ -12,15 +12,16 @@ class Flight extends Component{
     }
     render(){
         return(
-            <div className='flight'>
+            <div className='flight item section'>
                 <div className=''>
                     <h3>{this.props.flightData.onwardflights[0].airline}</h3>
                     <p> Flight {this.props.flightData.onwardflights[0].flightcode}</p>
                 </div>
                 <div className='depArr'>
-                    <p> Departing From {this.props.flightData.onwardflights[0].origin}
-                    </p>
-                    <p> Arriving At {this.props.flightData.onwardflights[0].destination}</p>
+                    <span> Departing From {this.props.flightData.onwardflights[0].origin}
+                    
+                    Arriving At {this.props.flightData.onwardflights[0].destination}
+                    </span>
                 </div>
                 <div className='time'>
                     <p>Leaving At {this.props.flightData.onwardflights[0].deptime}</p>

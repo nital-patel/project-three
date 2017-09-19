@@ -6,7 +6,7 @@ class HotelSearch extends Component{
     }
     render(){
         return(
-            <div>
+            <div className='section'>
                 <span>
                     Where would you like to book a Hotel?
                     <input />
