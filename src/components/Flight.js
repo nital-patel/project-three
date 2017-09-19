@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { Component } from 'react';
 
 class Flight extends Component {
@@ -37,6 +38,8 @@ class Flight extends Component {
 
 export default Flight;
 =======
+=======
+>>>>>>> 764f9835edb3f79a48082e277c6df48c622c13b1
 import React, {Component} from 'react';
 
 class Flight extends Component{
@@ -46,7 +49,13 @@ class Flight extends Component{
             placeholder:null
         }
     }
+<<<<<<< HEAD
 
+=======
+    fareConvert(){
+        return  this.props.flightData.onwardflights[0].fare.totalfare * 0.016
+    }
+>>>>>>> 764f9835edb3f79a48082e277c6df48c622c13b1
     render(){
         return(
             <div className='flight'>
@@ -65,7 +74,11 @@ class Flight extends Component{
                     <p> Duration {this.props.flightData.onwardflights[0].duration}</p>
                 </div>
                 <div className='fareSeat'>
+<<<<<<< HEAD
                 <p> Total Fare {this.props.flightData.onwardflights[0].fare.totalfare}</p>
+=======
+                <p> Total Fare {this.fareConvert()}</p>
+>>>>>>> 764f9835edb3f79a48082e277c6df48c622c13b1
                 <p>Seats Available</p>
                 </div>
             </div>
@@ -73,5 +86,9 @@ class Flight extends Component{
     }
 }
 
+<<<<<<< HEAD
 export default Flight;
 >>>>>>> 99c5685159019e5297b95eddf0864dc5967f54cb
+=======
+export default Flight;
+>>>>>>> 764f9835edb3f79a48082e277c6df48c622c13b1
