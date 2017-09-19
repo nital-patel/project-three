@@ -1,4 +1,4 @@
-INSERT INTO cities ("City name","City ID","Domestic Flag")
+INSERT INTO cityCodes (city_name, city_id, domestics)
 VALUES
 ("Panvel","4761547441228189942","1"),
 ("Mantralayam","6123261334828772222","1"),
