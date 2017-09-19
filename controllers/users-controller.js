@@ -23,7 +23,7 @@ usersController.create = (req, res) => {
 
 usersController.index = (req, res) => {
   User.findUserWaves(req.user.id)
-  .then(cats => {
+  .then(waves => {
     res.json({
     user: req.user,
     data: 'Put a user profile on this route',
