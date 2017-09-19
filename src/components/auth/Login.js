@@ -10,6 +10,7 @@ class Login extends Component{
     render(){
         return(
             <div>
+                Hi, i'm Login
             </div>
         )
     }
