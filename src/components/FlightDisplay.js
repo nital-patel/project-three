@@ -44,9 +44,11 @@ class FlightDisplay extends Component{
     }
 }
 
+
 export default FlightDisplay;
 
 // `http://developer.goibibo.com/api/search/?app_id=d09ac5c5&app_key=727ff3f0af2bda5a3443c6977cdea544&format=json&source=EWR&destination=LAX&dateofdeparture=${this.props.date}&seatingclass=E&adults=1&children=0&infants=0&counter=100`
 
 // `http://developer.goibibo.com/api/search/?app_id=d09ac5c5&app_key=727ff3f0af2bda5a3443c6977cdea544&format=json&source=${this.props.depAirport}&destination=${this.props.arrAirport}&dateofdeparture=${this.props.date}&seatingclass=E&adults=1&children=0&infants=0&counter=100`
 // // <FlightDisplay name='depart' depAirport={this.state.depAirport} arrAirport={this.state.arrAirport} date={this.state.depDate}/>
+
