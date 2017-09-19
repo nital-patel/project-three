@@ -28,7 +28,14 @@ app.use(passport.session());
 const tripRouter = require('./routes/trip-routes');
 app.use('/trip', tripRouter)
 
-//app.use('/user-index', receipeRouter);
+const flightRouter = require('./routes/flight-routes');
+app.use('/flight', flightRouter)
+
+const hotelRouter = require('./routes/hotel-routes');
+app.use('/hotel', hotelRouter)
+
+
+
 
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
@@ -46,8 +53,7 @@ app.use(function (req, res, next) {
 });*/
 
 app.use(express.static('public'));
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+
 
 
 app.get('/', (req, res) => {
