@@ -7,7 +7,9 @@ class Flight extends Component{
             placeholder:null
         }
     }
-
+    fareConvert(){
+        return  this.props.flightData.onwardflights[0].fare.totalfare * 0.016
+    }
     render(){
         return(
             <div className='flight'>
@@ -26,7 +28,7 @@ class Flight extends Component{
                     <p> Duration {this.props.flightData.onwardflights[0].duration}</p>
                 </div>
                 <div className='fareSeat'>
-                <p> Total Fare {this.props.flightData.onwardflights[0].fare.totalfare}</p>
+                <p> Total Fare {this.fareConvert()}</p>
                 <p>Seats Available</p>
                 </div>
             </div>
