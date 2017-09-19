@@ -21,4 +21,31 @@ usersController.create = (req, res) => {
   });
 }
 
+usersController.index = (req, res) => {
+  User.findUserWaves(req.user.id)
+  .then(cats => {
+    res.json({
+    user: req.user,
+    data: 'Put a user profile on this route',
+    waves: waves,
+
+
+    });
+
+
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({err: err});
+    });
+
+  }
+
+
+User.findUserWaves = id => {
+  return db.manyOrNone(`
+    SELECT * FROM users
+    WHERE user_id = $1
+  `, [id]);
+};
+
 module.exports = usersController;
