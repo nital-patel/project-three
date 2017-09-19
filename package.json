@@ -5,7 +5,11 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "pg-promise": "^6.3.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -14,12 +18,12 @@
     "eject": "react-scripts eject"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "index.js",
+  "main": "App.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://git.generalassemb.ly/Amipatel2410/project-three.git"
+    "url": "https://git.generalassemb.ly/kevinblackwell/project-three/tree/dev"
   },
-  "author": "Amisha Patel",
+  "author": "Kevin Blackwell",
   "license": "ISC"
 }
