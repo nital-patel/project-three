@@ -9,8 +9,13 @@ class Login extends Component{
     }
     render(){
         return(
-            <div>
-                Hi, i'm Login
+            <div className='login item section'>
+                <h2>Login</h2>
+                <form>
+                    <input name='username' placeholder='username'></input>
+                    <input name='password' placeholder='password'></input>
+                    <button type='submit'>Login</button>
+                </form>
             </div>
         )
     }

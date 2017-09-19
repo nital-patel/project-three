@@ -32,19 +32,19 @@ class FlightSearch extends Component{
     }
     render(){
         return(
-            <div className='FlightSearch'>
+            <div className='FlightSearch item'>
                 <form>
 
                     <div>
                         <h1>Looking for a flight?</h1>
                     </div>
                     
-                    <div className='searchSection'>
+                    <div className='section'>
                         <input className='depAirport' placeholder='departing from'/>
                         <input className='arrAirport' placeholder='arriving at'/>
                     </div>
 
-                    <div className='searchSection'>
+                    <div className='section'>
                         <input className='depDate' placeholder='departure date' />
                         <span>return flight?
                             <input type='checkbox' />
@@ -52,7 +52,7 @@ class FlightSearch extends Component{
                         <input className='returnDate' placeholder='return Date'/>
                     </div>
 
-                    <div className='searchSection'>
+                    <div className='section'>
                         <span>
                             Seats
                             <select className='seatsDrop'>
@@ -71,13 +71,13 @@ class FlightSearch extends Component{
                         </span>
                     </div>
 
-                    <div className='searchSection'>
+                    <div className='section'>
                         <span>Would you like to book a Hotel?
                         <input name='hotelSearchDisplay' value={this.state.hotelSearchDisplay} onChange={this.checkHandler} type='checkbox'/>
                         </span>
                     </div>
                     {this.displayHotel()}
-                    <div className='searchSection'>
+                    <div className='section'>
                         <button>Find my Flight!</button>
                     </div>
 
