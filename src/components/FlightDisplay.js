@@ -24,7 +24,7 @@ class FlightDisplay extends Component{
     }
     renderFlights(){
         if(this.state.flightDataLoaded){
-           return <Flight />
+           return <Flight flightData={this.state.flightData}/>
         }else{
             return <p>loadingflights</p>
         }
