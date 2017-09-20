@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import FlightSearch from './components/FlightSearch';
 import HotelDisplay from './components/HotelDisplay'
