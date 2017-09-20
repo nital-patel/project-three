@@ -1,5 +1,3 @@
-
-
 \c the_wave;
 
 DROP TABLE IF EXISTS Users;

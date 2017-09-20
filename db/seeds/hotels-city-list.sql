@@ -1,3 +1,5 @@
+\c the_wave
+
 INSERT INTO cityCodes (city_name, city_id, domestics)
 VALUES
 ("Panvel","4761547441228189942","1"),
