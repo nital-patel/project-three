@@ -32,7 +32,7 @@ class Flight extends Component{
                 <p>Seats Available</p>
                 </div>
                 {/* Amisha, we need an action here for the route */}
-                <form method='POST' action=''>
+                <form method='POST' action='/trip'>
                     <input type='hidden' name='airline' value={this.props.flightData.onwardflights[0].airline} />
                     <input type='hidden' name='flightno' value={this.props.flightData.onwardflights[0].flightcode} />
                     <input type='hidden' name='origin' value={this.props.flightData.onwardflights[0].origin}/>

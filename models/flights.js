@@ -22,4 +22,14 @@ Flight.update = (flight, id) => {
     );
 };
 
+Flight.destroy = id => {
+  return db.none(
+    `
+      DELETE FROM flights
+      WHERE id = $1
+    `,
+    [id]
+  );
+};
+
 module.exports = Flight;
