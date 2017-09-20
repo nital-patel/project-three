@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 class HotelSearch extends Component {
   constructor() {
     super();
+    this.state={
+        hotelData:null,
+        hotelDataLoaded:false
+    }
   }
   render() {
     return (
@@ -15,8 +19,5 @@ class HotelSearch extends Component {
     );
   }
 }
-
-
-
 
 export default HotelSearch;

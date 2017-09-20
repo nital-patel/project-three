@@ -3,16 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "body-parser": "^1.18.1",
-    "express": "^4.15.4",
-    "method-override": "^2.3.9",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "flat": "^4.0.0",
+    "method-override": "^2.3.9",
     "morgan": "^1.8.2",
-    "pg-promise": "^6.3.8"
+    "pg-promise": "^6.3.8",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.13"
   },
   "scripts": {
     "start": "react-scripts start",
