@@ -8,7 +8,9 @@ class Flight extends Component {
             placeholder: null,
         };
     }
-
+    fareConvert(){
+      return this.flight.totalfare * 0.16
+    }
     render() {
         const flight = this.props.flightData.onwardflights[0];
 
