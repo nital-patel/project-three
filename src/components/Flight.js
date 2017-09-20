@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Flight extends Component{
     constructor(){
@@ -28,8 +28,8 @@ class Flight extends Component{
                     <p> Duration {this.props.flightData.onwardflights[0].duration}</p>
                 </div>
                 <div className='fareSeat'>
-                <p> Total Fare {this.fareConvert()}</p>
-                <p>Seats Available</p>
+                <p> Total Fare: ${this.fareConvert()}</p>
+                <p>Seats Available {this.props.flightData.onwardflights[0].seatsavailable}</p>
                 </div>
                 {/* Amisha, we need an action here for the route */}
                 <form method='POST' action='/trip'>
@@ -47,5 +47,6 @@ class Flight extends Component{
         )
     }
 }
+
 
 export default Flight;
