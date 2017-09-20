@@ -49,8 +49,5 @@ class Flight extends Component {
         )
     }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 0f3894819de59e6e9dbfb154c5692fd4bca3b71b
 export default Flight;

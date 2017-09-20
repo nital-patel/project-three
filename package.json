@@ -23,20 +23,9 @@
   "proxy": "https://localhost:3001",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
-<<<<<<< HEAD
   "devDependencies": {
     "nodemon": "^1.12.1"
   },
-=======
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "https://git.generalassemb.ly/Amipatel2410/project-three.git"
-  },
-  "author": "Amisha Patel",
-  "main": "App.js",
-  "devDependencies": {},
->>>>>>> 0f3894819de59e6e9dbfb154c5692fd4bca3b71b
   "repository": {
     "type": "git",
     "url": "https://git.generalassemb.ly/kevinblackwell/project-three/tree/dev"

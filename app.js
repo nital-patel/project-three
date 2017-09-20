@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
@@ -66,8 +65,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`App is up and running. Listening on port ${PORT}`);
 });
-=======
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const passport = require('passport');
->>>>>>> 0f3894819de59e6e9dbfb154c5692fd4bca3b71b
