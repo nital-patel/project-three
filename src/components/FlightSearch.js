@@ -143,4 +143,4 @@ class FlightSearch extends Component{
 
 
 
-export default FlightSearch
+export default FlightSearch;

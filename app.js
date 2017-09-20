@@ -1,4 +1,3 @@
-
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
@@ -33,4 +32,3 @@ app.use(express.static('public'));
 app.listen(PORT, () => {
   console.log(`App is up and running. Listening on port ${PORT}`);
 });
-
