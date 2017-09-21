@@ -5,22 +5,18 @@ function comparePass(userPassword, databasePassword) {
 }
 
 function loginRedirect(req, res, next) {
-  if (req.user) return res.status(200).json({
-      message: "login success"
-  });
+  if (req.user) return res.redirect('/user');
   return next();
 }
 
 function loginRequired(req, res, next) {
-    if (!req.user) return res.status(401).json({
-      message: "Login Required"
-    });
-    return next();
+  if (req.user === undefined) return res.redirect('/auth/login');
+  console.log('not working')
+  return next();
 }
 
 module.exports = {
-    comparePass,
-    loginRedirect,
-    loginRequired
-};
-
+  comparePass,
+  loginRedirect,
+  loginRequired,
+}

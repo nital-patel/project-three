@@ -18,4 +18,14 @@ User.create = user => {
   `, [user.username, user.email, user.password_digest]);
 };
 
+User.findUserWaves = id => {
+  return db.manyOrNone(`
+    SELECT * FROM trips
+    INNER JOIN users ON users.id = trips.user_id
+    INNER JOIN flights ON flights.id = trips.flight_id
+    INNER JOIN hotels ON hotels.id = trips.hotel_id
+    WHERE user_id = $1
+  `, [id]);
+};
+
 module.exports = User;

@@ -12,11 +12,13 @@
     "flat": "^4.0.0",
     "method-override": "^2.3.9",
     "morgan": "^1.8.2",
+    "nodemon": "^1.12.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pg-promise": "^6.3.8",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13"
   },
   "scripts": {
@@ -43,7 +45,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git.generalassemb.ly/kevinblackwell/project-three/tree/dev"
+    "url": "https://git.generalassemb.ly/kevinblackwell/project-three.git"
   },
   "author": "Kevin Blackwell",
   "license": "ISC"

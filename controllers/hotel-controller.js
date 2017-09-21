@@ -1,6 +1,19 @@
 const Hotel = require('../models/hotel');
+const Trip = require('../models/trip')
 
 const hotelController = {};
+
+
+hotelController.create = (req, res) => {
+  Hotel.create()
+  Trip.create()
+  .then(trip => {
+    // res.render('Insert Trip Route here')
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  })
+}
 
 //john work
 hotelController.show = (req,res)=>{
@@ -12,6 +25,7 @@ hotelController.show = (req,res)=>{
   })
 };
 //
+
 
 hotelController.edit = (req, res) => {
   Hotel.findById(req.params.id)
