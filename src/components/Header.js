@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 
 class Header extends Component {
@@ -11,7 +12,7 @@ class Header extends Component {
     render() {
         return(
             <div className='navBar'>
-                <span> 
+                <span>
                     <p><img className="icon" href="https://www.projectedimage.com/content/products/2015-01/l/54b3ec70c6049.png"/>  <span className="title">The Wave: What's the wave?</span></p>
                 </span>
             </div>

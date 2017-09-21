@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 
 const app = express();
 
+
 require('dotenv').config();
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -27,6 +28,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 const tripRouter = require('./routes/trip-routes');
 app.use('/trip', tripRouter);
 
@@ -38,10 +40,13 @@ app.use('/hotel', hotelRouter);
 
 const authRoutes = require('./routes/auth-route');
 app.use('/auth', authRoutes);
+
 const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
 
 app.use(express.static('public'));
+
+
 
 if (process.env.NODE_ENV) {
     const webpackMiddleware = require("webpack-dev-middleware");
