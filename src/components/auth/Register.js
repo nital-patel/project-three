@@ -1,23 +1,25 @@
 import React, {Component} from 'react'
+import axios from 'axios';
 
 class Register extends Component{
     constructor(){
         super();
         this.state={
           username: '',
-          email: ''
+          email: '',
           password: '',
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
-    handleInputChange(e){
-      const name = e.target.name;
-      const value = e.target.value;
-      this.setState({
-        [name]: value,
-    });
+    handleInputChange(e) {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({
+            [name]: value,
+        });
+    }
 
     handleFormSubmit(e) {
         e.preventDefault();

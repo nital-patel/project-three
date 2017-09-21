@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Flight from './Flight';
 import axios from 'axios';
-import { Link, Redirect } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 class FlightSingle extends Component {
 
@@ -61,7 +61,6 @@ class FlightSingle extends Component {
           </div>
 
           <div className="links">
-              <Link to={`/edit/${this.props.match.params.id}`}>Edit</Link>
               <span className="delete" onClick={this.deleteFlight}>Delete</span>
           </div>
 
