@@ -1,9 +1,12 @@
-import React, {Component} from 'react'
+
+import React, {Component} from 'react';
+
 import axios from 'axios';
 
 class Login extends Component{
     constructor(){
         super();
+
         this.state={
             username: '',
             password: '',
@@ -34,14 +37,17 @@ class Login extends Component{
         e.target.reset();
       }
 
+
     render(){
         return(
             <div className='login item section'>
                 <h2>Login</h2>
                 {/* nital, put in an action that is the route you want to call the auth methods on */}
                 <form onSubmit={this.handleFormSubmit}>
+
                     <input name='username' placeholder='username' value={this.state.username} onChange={this.handleInputChange}></input>
                     <input name='password' placeholder='password' value={this.state.password} onChange={this.handleInputChange}></input>
+
                     <button type='submit'>Login</button>
                 </form>
             </div>
