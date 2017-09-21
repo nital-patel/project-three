@@ -41,7 +41,7 @@ class FlightSearch extends Component{
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;  
         this.setState({
-            [name]:value
+            [name]:value.toUpperCase()
         })    
     }
     renderFlightDisplay(){
@@ -73,6 +73,7 @@ class FlightSearch extends Component{
             })
         }
     }
+
     render(){
         return(
             <div>
@@ -91,8 +92,8 @@ class FlightSearch extends Component{
                         </div>
                         
                         <div className='section'>
-                            <input name='depAirport' className='depAirport' placeholder='departing from' onChange={this.changeHandler}/>
-                            <input name='arrAirport' className='arrAirport' placeholder='arriving at' onChange={this.changeHandler}/>
+                            <input name='depAirport' className='depAirport airport' placeholder='departing from' onChange={this.changeHandler}/>
+                            <input name='arrAirport' className='arrAirport airport' placeholder='arriving at' onChange={this.changeHandler}/>
                         </div>
 
                         <div className='section'>
@@ -110,6 +111,13 @@ class FlightSearch extends Component{
                                     <option value='0'>0</option>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
+                                    <option value='3'>3</option>
+                                    <option value='4'>4</option>
+                                    <option value='5'>5</option>
+                                    <option value='6'>6</option>
+                                    <option value='7'>7</option>
+                                    <option value='8'>8</option>
+                                    <option value='9'>9</option>
                                 </select>
                             </span>
                             <span>

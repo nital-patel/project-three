@@ -2,6 +2,17 @@ const Flight = require('../models/flights');
 
 const flightController = {};
 
+flightController.create = (req, res) => {
+  Flight.create()
+  .then(flight => {
+    // res.render('hotel search page')
+    console.log('Put hotel search page in the render above')
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  })
+}
+
 flightController.edit = (req, res) => {
   Flight.findById(req.params.id)
     .then(flight => {
