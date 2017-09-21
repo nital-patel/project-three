@@ -7,7 +7,7 @@ class Register extends Component{
         this.state={
           username: '',
           email: '',
-          password: '',
+          password: ''
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -18,7 +18,7 @@ class Register extends Component{
       const value = e.target.value;
       this.setState({
         [name]: value,
-    });
+      });
     }
 
     handleFormSubmit(e) {
