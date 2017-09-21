@@ -2,6 +2,17 @@ const Hotel = require('../models/hotel');
 
 const hotelController = {};
 
+//john work
+hotelController.show = (req,res)=>{
+  Hotel.show(req.params.id)
+  .then(hotel =>{
+    res.status('/:id').send({hotel:hotel})
+  }).catch(err=>{
+    res.status(400).json(err);
+  })
+};
+//
+
 hotelController.edit = (req, res) => {
   Hotel.findById(req.params.id)
     .then(hotel => {

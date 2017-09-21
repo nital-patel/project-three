@@ -16,7 +16,7 @@ class HotelDisplay extends Component{
 
     componentDidMount(){
         fetch(
-            `http://developer.goibibo.com/api/voyager/get_hotels_by_cityid/?app_id=d09ac5c5&app_key=727ff3f0af2bda5a3443c6977cdea544&city_id=6771549831164675055`
+            `/hotel/${this.props.hotelSelection}`
         ).then(
         res=>res.json()
         ).then(jsonRes =>{
@@ -43,7 +43,7 @@ class HotelDisplay extends Component{
     renderHotels(){
         if(this.state.hotelDataLoaded){
             
-           return <Hotel hotelName={this.hotelNameFinder(this.hotelParser(this.state.hotelData.data))}/>
+           return <Hotel hotelName={this.state.hoteltData.name}/>
         }else{
             return <p>loading hotels</p>
         }
@@ -66,4 +66,4 @@ export default HotelDisplay;
 //   rating = $2,
 //   city = $3,
 //   WHERE id = $4
-
+//return <Hotel hotelName={this.hotelNameFinder(this.hotelParser(this.state.hotelData.data))}/>
