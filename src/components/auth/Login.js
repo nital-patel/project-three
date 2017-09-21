@@ -1,20 +1,52 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+
+import axios from 'axios';
 
 class Login extends Component{
     constructor(){
         super();
-        this.state={
-            blank:null
-        }
+        this.state = {
+            username: '',
+            password: '',
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
+
+
+    handleInputChange(e) {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({
+            [name]: value,
+        });
+    }
+
+    handleFormSubmit(e) {
+        e.preventDefault();
+        axios
+            .post('/user', {
+                username: this.state.username,
+                password: this.state.password,
+    })
+
+            .then(res => {
+            console.log(res);
+            this.setState({});
+
+        })
+            .catch(err => console.log(err));
+        e.target.reset();
+    }
+
     render(){
         return(
             <div className='login item section'>
                 <h2>Login</h2>
                 {/* nital, put in an action that is the route you want to call the auth methods on */}
-                <form method='POST' action=''>
-                    <input name='username' placeholder='username'></input>
-                    <input name='password' placeholder='password'></input>
+                <form onSubmit={this.handleFormSubmit}>
+                    <input name='username' placeholder='username' value={this.state.useranme}onChange={this.handleInputChange} />
+                    <input name='password' placeholder='password' value={this.state.password}onChange={this.handleInputChange} />
                     <button type='submit'>Login</button>
                 </form>
             </div>
