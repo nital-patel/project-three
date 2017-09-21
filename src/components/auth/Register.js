@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
+import axios from 'axios';
 
 class Register extends Component{
     constructor(){
         super();
         this.state={
           username: '',
-          email: ''
+          email: '',
           password: '',
         }
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -18,6 +19,7 @@ class Register extends Component{
       this.setState({
         [name]: value,
     });
+    }
 
     handleFormSubmit(e) {
         e.preventDefault();
