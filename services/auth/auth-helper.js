@@ -8,3 +8,15 @@ function loginRedirect(req, res, next) {
   if (req.user) return res.redirect('/user');
   return next();
 }
+
+function loginRequired(req, res, next) {
+  if (req.user === undefined) return res.redirect('/auth/login');
+  console.log('not working')
+  return next();
+}
+
+module.exports = {
+  comparePass,
+  loginRedirect,
+  loginRequired,
+}

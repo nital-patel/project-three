@@ -21,6 +21,7 @@ usersController.create = (req, res) => {
   });
 }
 
+
 usersController.index = (req, res) => {
   User.findUserWaves(req.user.id)
   .then(waves => {
@@ -28,12 +29,8 @@ usersController.index = (req, res) => {
     user: req.user,
     data: 'Put a user profile on this route',
     waves: waves,
-
-
     });
-
-
-    }).catch(err => {
+ }).catch(err => {
       console.log(err);
       res.status(500).json({err: err});
     });
@@ -41,11 +38,6 @@ usersController.index = (req, res) => {
   }
 
 
-User.findUserWaves = id => {
-  return db.manyOrNone(`
-    SELECT * FROM users
-    WHERE user_id = $1
-  `, [id]);
-};
+
 
 module.exports = usersController;

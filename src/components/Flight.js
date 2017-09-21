@@ -9,8 +9,10 @@ class Flight extends Component {
         };
     }
     fareConvert(){
-      return this.flight.totalfare * 0.16
-    }
+
+        return this.props.flightData.onwardflights[0].fare.totalfare * .016;
+      }
+
     render() {
         const flight = this.props.flightData.onwardflights[0];
 
@@ -34,7 +36,6 @@ class Flight extends Component {
                     <p> Total Fare {flight.fare.totalfare}</p>
                     <p>Seats Available</p>
                 </div>
-                {/* Amisha, we need an action here for the route */}
                 <form method='POST' action='/trip'>
                     <input type='hidden' name='airline' value={this.props.flightData.onwardflights[0].airline} />
                     <input type='hidden' name='flightno' value={this.props.flightData.onwardflights[0].flightcode} />
