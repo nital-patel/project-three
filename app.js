@@ -1,67 +1,75 @@
 const express = require('express');
 const logger = require('morgan');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 const app = express();
+
+
 require('dotenv').config();
 
-const methodOverride = require('method-override');
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 app.use(methodOverride('_method'));
 
 const PORT = process.env.PORT || 3000;
 app.use(logger('dev'));
-const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
-  secret: process.env.SECRET_KEY,
-  resave: false,
-  saveUninitialized: true,
+    secret: process.env.SECRET_KEY,
+    resave: false,
+    saveUninitialized: true,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-const tripRouter = require('./routes/trip-routes');
-app.use('/trip', tripRouter)
 
-const flightRouter = require('./routes/flight-routes');
-app.use('/flight', flightRouter)
+const tripRouter = require('./routes/trip-routes');
+app.use('/trip', tripRouter);
+
+const flightRouter = require('./routes/flights-routes');
+app.use('/flight', flightRouter);
 
 const hotelRouter = require('./routes/hotel-routes');
-app.use('/hotel', hotelRouter)
+app.use('/hotel', hotelRouter);
 
-
-
-
-const authRoutes = require('./routes/auth-routes');
+const authRoutes = require('./routes/auth-route');
 app.use('/auth', authRoutes);
+
 const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
-
-
-/*const receipesearchRouter = require('./routes/receipesearch-routes');
-app.use('/receipesearch', receipesearchRouter);
-
-
-app.use(function (req, res, next) {
-  res.locals.user = req.user || null;
-  next();
-});*/
 
 app.use(express.static('public'));
 
 
 
+if (process.env.NODE_ENV) {
+    const webpackMiddleware = require("webpack-dev-middleware");
+    const webpack = require('webpack');
+    const webPackDevConfig = require('./webpack.dev.config');
+
+    app.use(webpackMiddleware(webpack(webPackDevConfig), {
+        noInfo: true,
+        watchOptions: {
+            aggregateTimeout: 300,
+            poll: true
+        },
+        publicPath: "/",
+        stats: {
+            colors: true
+        },
+    }));
+}
+
 app.get('/', (req, res) => {
-  res.render('main-index');
+    res.render('main-index');
 });
 
-
-
 app.listen(PORT, () => {
-  console.log(`App is up and running. Listening on port ${PORT}`);
+    console.log(`App is up and running. Listening on port ${PORT}`);
 });
