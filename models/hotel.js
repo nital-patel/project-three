@@ -25,4 +25,4 @@ Hotel.destroy = id => {
     [id]
   );
 };
-module.exports = Flight;
+module.exports = Hotel;

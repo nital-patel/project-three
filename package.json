@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-  "axios": "^0.16.2",
+
 
     "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
+    "express-session": "^1.15.5",
     "flat": "^4.0.0",
     "method-override": "^2.3.9",
     "morgan": "^1.8.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "pg-promise": "^6.3.8",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -17,7 +21,7 @@
     "react-scripts": "1.0.13"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "./node_modules/.bin/nodemon app",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
@@ -26,7 +30,17 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "app.js",
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "babel-loader": "^7.1.2",
+    "babel-preset-react-app": "^3.0.2",
+    "css-loader": "^0.28.7",
+    "eslint-config-react-app": "^2.0.0",
+    "eslint-loader": "^1.9.0",
+    "nodemon": "^1.12.1",
+    "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-loader": "^2.0.6",
+    "react-dev-utils": "^4.0.1",
+    "style-loader": "^0.18.2",
+    "webpack-dev-middleware": "^1.12.0"
   },
   "repository": {
     "type": "git",

@@ -1,26 +1,23 @@
-import React from 'react';
 
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react'
 
 class Header extends Component {
-  render(){
-  return(
-    <header>
-      <div className="logo">
-        WAVE
-      </div>
-      <nav>
-        <ul>
-          <li><Link to ='/'>Home</Link></li>
-          <li><Link to ='/auth'>Login</Link></li>
-          <li><Link to ='/auth'>Register</Link></li>
-        </ul>
-      </nav>
-    </header>
-    )
+    constructor() {
+        super()
+        this.state = {
+            boxHovered: false
+        }
+    }
+
+    render() {
+        return(
+            <div className='navBar'>
+                <span>
+                    <p><img className="icon" href="https://www.projectedimage.com/content/products/2015-01/l/54b3ec70c6049.png"/>  <span className="title">The Wave: What's the wave?</span></p>
+                </span>
+            </div>
+        )
+    }
 }
-}
 
-
-
-export default Header;
+export default Header

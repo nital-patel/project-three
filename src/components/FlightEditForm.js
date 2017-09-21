@@ -15,7 +15,6 @@ class FlightEditForm extends Component{
       duration: '',
       destination: '',
       airline: '',
-      totalfare: '',
       userRedirect: false,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
