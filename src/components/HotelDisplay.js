@@ -46,8 +46,12 @@ class HotelDisplay extends Component{
     
     renderHotels(){
         if(this.state.hotelDataLoaded){
-            
-           return <Hotel hotelName={this.state.hotelData.name[0]}/>
+            const hotelData = this.state.hotelData
+           return (
+           <Hotel hotelData={hotelData[0]}/>
+           <Hotel hotelData={hotelData[1]}/>
+           <Hotel hotelData={hotelData[2]}/>
+            )
         }else{
             return <p>loading hotels</p>
         }

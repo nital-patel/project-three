@@ -14,8 +14,8 @@ class App extends Component {
       <div className="background">  
         <div className="App">
           <Header />
-          <FlightSearch />s
-          <HotelDisplay />
+          <FlightSearch />
+          
 
         </div>
       </div>
