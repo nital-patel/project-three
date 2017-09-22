@@ -16,6 +16,7 @@ hotelController.create = (req, res) => {
 
 //john work
 hotelController.show = (req,res)=>{
+  console.log('this is the id in the show controller',req.params.id)
   Hotel.show(req.params.id)
   .then(hotel =>{
     res.status('/:id').send({hotel:hotel})
