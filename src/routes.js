@@ -11,10 +11,11 @@ const customHistory = createBrowserHistory();
 export default () => (
     <Router history={customHistory}>
         <div className='router'>
-            <Route exact path='/' component={() => (<div><Link to='/register'>Register</Link><Login /></div>)}/>
-            <Route exact path='/profile' component={() => (<div><Link to='/search'>Search</Link><h1>Profile Component will come here</h1></div>)} />
-            <Route exact path='/search' component={App} />
+            <Route exact path='/search' component={() => (<div><Link to='/register'>Register</Link><Login /></div>)}/>
+            <Route exact path='/Userprofile' component={() => (<div><Link to='/search'>Search</Link><span><Link to='/search'>Logout</Link> </span><h1>Profile Component will come here</h1></div>)} />
+            <Route exact path='/' component={App} />
             <Route exact path='/register' component={Register} />
+            <Route exact path='/login' component={Login}/>
         </div>
     </Router>
 );
