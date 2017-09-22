@@ -13,7 +13,7 @@ export default () => (
         <div className='router'>
 
             <Route exact path='/search' component={() => (<div><Link to='/register'>Register</Link><Login /></div>)}/>
-            <Route exact path='/profile' component={UserProfile} />
+            <Route exact path='/UserProfile' component={UserProfile} />
            {/* <Route exact path='/Userprofile' component={() => (<div><Link to='/'>Search</Link><span><Link to='/'>Logout</Link> </span><h1>Profile Component will come here</h1></div>)} />*/}
             <Route exact path='/' component={App} />
             <Route exact path='/register' component={Register} />
