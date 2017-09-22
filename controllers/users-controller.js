@@ -4,13 +4,13 @@ const User = require('../models/user.js');
 const usersController = {};
 
 usersController.create = (req, res) => {
-  const salt = bcrypt.genSaltSync();
-  const hash = bcrypt.hashSync(req.body.password, salt);
+    const salt = bcrypt.genSaltSync();
+    const hash = bcrypt.hashSync(req.body.password, salt);
   User.create({
     username: req.body.username,
     email: req.body.email,
     password_digest: hash,
-    salt: salt,
+      salt: salt,
   }).then(user => {
     req.login(user, (err) => {
       if (err) return next(err);
@@ -29,7 +29,6 @@ usersController.index = (req, res) => {
     res.json({
     user: req.user,
     data: 'Put a user profile on this route',
-    waves: waves,
     });
  }).catch(err => {
       console.log(err);
