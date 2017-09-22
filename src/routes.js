@@ -1,17 +1,20 @@
 import React from 'react';
+import { Router, Route, Link } from 'react-router-dom';
+
 import App from './App';
-import FlightSearch from './components/FlightSearch';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import createBrowserHistory from 'history/createBrowserHistory';
 
-import { BrowserRouter, Route } from 'react-router-dom';
+const customHistory = createBrowserHistory();
 
-export default (
-    <BrowserRouter>
+export default () => (
+    <Router history={customHistory}>
         <div className='router'>
-            <Router exact=path='/' component={App} />
-            <Router exact=path='/Login' component={Login} />
-            <Router exact=path='/Register' component={Register} />
-
-           </div>
-</BrowserRouter>
-
-)
+            <Route exact path='/' component={() => (<div><Link to='/register'>Register</Link><Login /></div>)}/>
+            <Route exact path='/profile' component={() => (<div><Link to='/search'>Search</Link><h1>Profile Component will come here</h1></div>)} />
+            <Route exact path='/search' component={App} />
+            <Route exact path='/register' component={Register} />
+        </div>
+    </Router>
+);

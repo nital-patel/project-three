@@ -13,7 +13,7 @@ class FlightSearch extends Component{
             returnDate:null,
             class:'economy',
             searchFull:false
-        }
+        };
         this.checkHandler=this.checkHandler.bind(this);
         this.displayHotel=this.displayHotel.bind(this);
         this.searchFullCheck=this.searchFullCheck.bind(this);
@@ -25,14 +25,13 @@ class FlightSearch extends Component{
         if(this.state.hotelSearchDisplay){
             return <HotelSearch />
         }
-        else return
     }
     
     searchFullCheck(){
         if(this.state.depAirport && this.state.arrAirport && this.state.depDate && this.state.returnDate){
             this.setState({
                 searchFull:true
-            })
+            });
         }
     }
     changeHandler(event){
@@ -61,16 +60,15 @@ class FlightSearch extends Component{
     checkHandler(event){
         event.preventDefault();
         const target = event.target;
-        const value = target.value;
-        const name = target.name;  
+        const name = target.name;
         if(this.state.name){
             this.setState({
                 [name]:false
-            })
+            });
         }else{
             this.setState({
                 [name]:true
-            })
+            });
         }
     }
 
@@ -144,11 +142,8 @@ class FlightSearch extends Component{
                 </div>
                {this.renderFlightDisplay()}
             </div>
-        )
+        );
     }
 }
-
-
-
 
 export default FlightSearch;

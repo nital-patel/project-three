@@ -2,6 +2,16 @@ const db = require('../db/config');
 
 const Trip = {};
 
+Trip.create = (trip, user_id, flight_id, hotel_id) => {
+  return db.one(
+    `
+      INSERT INTO trips
+      (user_id, flight_id, hotel_id)
+      VALUES ($1, $2, $3) RETURNING *
+    `,
+    [user.id, flight.id, hotel.id]
+  );
+};
 
 
 Trip.update = (Trips, id) => {

@@ -1,5 +1,6 @@
 
 import React, {Component} from 'react';
+import { withRouter } from 'react-router';
 
 import axios from 'axios';
 
@@ -15,30 +16,33 @@ class Login extends Component{
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
  }
 
-    handleInputChange(e){
-      const name = e.target.name;
-      const value = e.target.value;
-      this.setState({
-        [name]: value,
-    });
-  }
+    handleInputChange(e) {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({
+            [name]: value,
+        });
+    }
 
       handleFormSubmit(e) {
         e.preventDefault();
-        axios.post('/user', {
-          username: this.state.username,
-          password: this.state.password,
-        }).then(res => {
-          console.log(res);
-          this.setState({
-            newId: res.data.data.id
-          });
-        }).catch(err => console.log(err));
+
+        this.props.history.push('/profile', {});
+
+        // axios.post('http://localhost:3000/auth/login', {
+        //   username: this.state.username,
+        //   password: this.state.password,
+        // }).then(res => {
+        //   console.log(res);
+        //   this.setState({
+        //     newId: res.data.data.id
+        //   });
+        // }).catch(err => console.log(err));
         e.target.reset();
       }
 
 
-    render(){
+        render(){
         return(
             <div className='login item section'>
                 <h2>Login</h2>
@@ -55,4 +59,4 @@ class Login extends Component{
     }
 }
 
-export default Login;
+export default withRouter(Login);
