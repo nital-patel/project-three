@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import UserProfile from './UserProfile';
+import UserProfileData from './UserProfileData';
 import { withRouter } from 'react-router';
 
 class UserProfile extends Component{
