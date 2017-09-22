@@ -31,8 +31,11 @@ class UserProfile extends Component{
     return(
         <div className="userflight-list">
           {this.renderUserflight()}
+          <button type='add'>add</button>
+        <button type='submit'>delete</button>
         </div>
-      )
+
+  )
   }
 }
 
