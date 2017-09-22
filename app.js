@@ -5,6 +5,7 @@ const session = require('express-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const path = require('path');
 
 const app = express();
 
@@ -46,8 +47,6 @@ app.use('/user', userRoutes);
 
 app.use(express.static('public'));
 
-
-
 if (process.env.NODE_ENV) {
     const webpackMiddleware = require("webpack-dev-middleware");
     const webpack = require('webpack');
@@ -66,8 +65,10 @@ if (process.env.NODE_ENV) {
     }));
 }
 
-app.get('/', (req, res) => {
-    res.render('main-index');
+app.get('/*', function(req, res) {
+    console.log('Sending index.html');
+
+    res.sendFile(path.join(__dirname, 'public', 'page.html'));
 });
 
 app.listen(PORT, () => {

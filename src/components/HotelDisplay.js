@@ -2,19 +2,23 @@ import React, {Component} from 'react';
 import Hotel from './Hotel';
 // import flatten from 'flat';
 
-class HotelDisplay extends Component {
-  constructor() {
-    super();
-    this.state={
-        hotelData:null,
-        hotelDataLoaded:false
+class HotelDisplay extends Component{
+    constructor(){
+        super();
+        this.state={
+            hoteltData:null,
+            hoteltDataLoaded:false
+        }
+        //bindings
+        this.hotelNameFinder = this.hotelNameFinder.bind(this)
+        this.hotelParser = this.hotelParser.bind(this)
     }
-  }
+
     componentDidMount(){
         fetch(
-           "http://developer.goibibo.com/api/search/?app_id=d09ac5c5&app_key=727ff3f0af2bda5a3443c6977cdea544&format=json&source=EWR&destination=LAX&dateofdeparture=20171120&seatingclass=E&adults=1&children=0&infants=0&counter=100"
+            `/hotel/${this.props.hotelSelection}`
         ).then(
-            res=>res.json()
+        res=>res.json()
         ).then(jsonRes =>{
             this.setState({
                 hotelData:jsonRes.data,
@@ -22,9 +26,24 @@ class HotelDisplay extends Component {
             })
         })
     }
+    hotelParser(obj){
+        const results = [];
+        for (let key in obj){
+          results.push(obj[key])
+        }
+        return results
+      }
+      
+    hotelNameFinder(arr){
+        for(let i = 0; i <arr.length; i++){
+          return arr[i].hotel_geo_node.name;
+        }
+    }
+    
     renderHotels(){
-        if(this.state.flightDataLoaded){
-           return <Hotel hotelData={this.state.hotelData}/>
+        if(this.state.hotelDataLoaded){
+            
+           return <Hotel hotelName={this.state.hoteltData.name}/>
         }else{
             return <p>loading hotels</p>
         }
@@ -41,3 +60,10 @@ class HotelDisplay extends Component {
 export default HotelDisplay;
 
   //`http://developer.goibibo.com/api/voyager/get_hotels_by_cityid/?app_id=d09ac5c5&app_key=727ff3f0af2bda5a3443c6977cdea544&city_id=6771549831164675055`
+
+//   UPDATE hotel SET
+//   name = $1,
+//   rating = $2,
+//   city = $3,
+//   WHERE id = $4
+//return <Hotel hotelName={this.hotelNameFinder(this.hotelParser(this.state.hotelData.data))}/>

@@ -1,4 +1,9 @@
 const options = {
+  receive: (data, result, e) => {
+    console.log(e.query)
+    console.log(e.query)
+  },
+
   query: (e) => {
     console.log(e.query);
   }
@@ -21,3 +26,4 @@ function setDatabase() {
 const db = setDatabase();
 
 module.exports = db;
+

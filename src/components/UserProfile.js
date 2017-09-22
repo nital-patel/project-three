@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import UserProfile from './UserProfile';
+import { withRouter } from 'react-router';
 
 class UserProfile extends Component{
   constructor(){
@@ -9,7 +11,7 @@ class UserProfile extends Component{
   }
 
   componentDidMount(){
-    axios.get('/trip')
+    axios.get('http://localhost:3000/trip')
       .then(res => {
         this.setState({
           tripData: res.data.data,
