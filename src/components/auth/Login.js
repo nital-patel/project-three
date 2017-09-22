@@ -1,7 +1,6 @@
 
 import React, {Component} from 'react';
 import { withRouter } from 'react-router';
-import { Link, Redirect } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -13,6 +12,8 @@ class Login extends Component{
             username: '',
             password: '',
             conformpassword: '',
+            fireRedirect: false,
+            auth: false
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -29,7 +30,6 @@ class Login extends Component{
       handleFormSubmit(e) {
           e.preventDefault();
 
-          //this.props.history.push('/Userprofile', {});
 
           axios
               .post('http://localhost:3000/auth/login', {
@@ -38,17 +38,26 @@ class Login extends Component{
               })
               .then(res => {
                   console.log(res);
+                  if(res.data.auth){
                   this.setState({
-                      fireRedirect: true,
+                      auth: true,
 
               });
+                  this.handleRedirect();
+              }
       })
              .catch(err => console.log(err));
         e.target.reset();
       }
 
+      handleRedirect(){
+        if (this.state.auth){
+          return this.props.history.push('/UserProfile')
+        }
+      }
 
         render(){
+          console.log(this.state)
         return(
             <div className='login item section'>
                 <h2>Login</h2>
@@ -57,12 +66,9 @@ class Login extends Component{
 
                     <input type='text' name='username' placeholder='username' value={this.state.username} onChange={this.handleInputChange}></input>
                     <input type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleInputChange}></input>
-                    <input type="password" name='conformpassword' placeholder='conformpassword' value={this.state.password}onChange={this.handleInputChange}></input>
                     <button type='submit'>Login</button>
                 </form>
-                {this.state.fireRedirect
-                    ? <Redirect push to={`/UserProfile`} />
-                : ''}
+
             </div>
         )
     }

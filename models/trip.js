@@ -37,4 +37,11 @@ Trip.destroy = id => {
   );
 };
 
+Trip.findById = id => {
+  return db.oneOrNone (`
+    SELECT * FROM trips
+    WHERE user_id = $1
+    `, [id]);
+}
+
 module.exports = Trip;
