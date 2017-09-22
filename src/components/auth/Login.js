@@ -27,7 +27,7 @@ class Login extends Component{
       handleFormSubmit(e) {
         e.preventDefault();
 
-        this.props.history.push('/profile', {});
+        this.props.history.push('/Userprofile', {});
 
         // axios.post('http://localhost:3000/auth/login', {
         //   username: this.state.username,
