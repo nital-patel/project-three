@@ -14,7 +14,8 @@ usersController.create = (req, res) => {
   }).then(user => {
     req.login(user, (err) => {
       if (err) return next(err);
-      res.json({message: 'success' });
+      res.redirect('/user');
+      //.res.json({message: 'success' });
     });
   }).catch(err => {
     console.log(err);
@@ -24,12 +25,12 @@ usersController.create = (req, res) => {
 
 
 usersController.index = (req, res) => {
-  User.findUserWaves(req.user.id)
-  .then(waves => {
+  User.findUserTrips(req.user.id)
+  .then(Trips => {
     res.json({
     user: req.user,
-    data: 'Put a user profile on this route',
-    waves: waves,
+    message: 'Put a user profile on this route',
+    data: Trips,
     });
  }).catch(err => {
       console.log(err);

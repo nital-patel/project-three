@@ -36,7 +36,7 @@ class Register extends Component{
                 password: this.state.password,
             })
             .then(res => {
-                this.props.history.push('/', {});
+                this.props.history.push('/login', {});
             })
             .catch(err => console.log(err));
         e.target.reset();

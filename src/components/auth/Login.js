@@ -27,17 +27,16 @@ class Login extends Component{
       handleFormSubmit(e) {
         e.preventDefault();
 
-        this.props.history.push('/Userprofile', {});
-
-        // axios.post('http://localhost:3000/auth/login', {
-        //   username: this.state.username,
-        //   password: this.state.password,
-        // }).then(res => {
-        //   console.log(res);
-        //   this.setState({
-        //     newId: res.data.data.id
-        //   });
-        // }).catch(err => console.log(err));
+        axios.post('http://localhost:3000/auth/login', {
+          username: this.state.username,
+          password: this.state.password,
+        }).then(res => {
+          console.log(res);
+          this.setState({
+             id: res.data.id,
+           });
+          this.props.history.push('/Userprofile', {});
+        }).catch(err => console.log('this error:', err));
         e.target.reset();
       }
 
