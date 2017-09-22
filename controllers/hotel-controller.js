@@ -5,9 +5,8 @@ const hotelController = {};
 
 hotelController.create = (req, res) => {
   Hotel.create()
-  Trip.create()
-  .then(trip => {
-    // res.render('Insert Trip Route here')
+  .then(hotel => {
+    // res.render('Insert Trip confirmation route here')
   })
   .catch(err => {
     res.status(400).json(err);
