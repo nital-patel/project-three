@@ -51,4 +51,13 @@ TripController.destroy = (req, res) => {
       res.status(400).json(err);
     });
 };
+
+TripController.findById = () => {
+  Trip.findById()
+  .then(trip => {
+    res.render(`/userprofile/${req.params.id}`)
+  }).catch(err => {
+      res.status(400).json(err);
+    });
+}
 module.exports = TripController;

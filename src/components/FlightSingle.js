@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Flight from './Flight';
+//import Flight from './Flight';
 import axios from 'axios';
 //import { Link } from 'react-router-dom';
 

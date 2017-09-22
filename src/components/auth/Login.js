@@ -11,7 +11,10 @@ class Login extends Component{
         this.state={
             username: '',
             password: '',
-        }
+            conformpassword: '',
+            fireRedirect: false,
+            auth: false
+        };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
  }
@@ -25,23 +28,38 @@ class Login extends Component{
     }
 
       handleFormSubmit(e) {
-        e.preventDefault();
 
-        axios.post('http://localhost:3000/auth/login', {
-          username: this.state.username,
-          password: this.state.password,
-        }).then(res => {
-          console.log(res);
-          this.setState({
-             id: res.data.id,
-           });
-          this.props.history.push('/Userprofile', {});
-        }).catch(err => console.log('this error:', err));
+          e.preventDefault();
+
+
+          axios
+              .post('http://localhost:3000/auth/login', {
+                  username: this.state.username,
+                  password: this.state.password,
+              })
+              .then(res => {
+                  console.log(res);
+                  if(res.data.auth){
+                  this.setState({
+                      auth: true,
+
+              });
+                  this.handleRedirect();
+              }
+      })
+             .catch(err => console.log(err));
+
         e.target.reset();
       }
 
+      handleRedirect(){
+        if (this.state.auth){
+          return this.props.history.push('/UserProfile')
+        }
+      }
 
         render(){
+          console.log(this.state)
         return(
             <div className='login item section'>
                 <h2>Login</h2>
@@ -52,6 +70,7 @@ class Login extends Component{
                     <input type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleInputChange}></input>
                     <button type='submit'>Login</button>
                 </form>
+
             </div>
         )
     }

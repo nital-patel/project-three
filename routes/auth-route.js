@@ -19,24 +19,25 @@ authRouter.post('/login', passport.authenticate('local', {
   })
 );
 
+
 authRouter.post('/register', usersController.create);
 
 authRouter.get('/success', (req, res) => {
-   res.json({
-       auth: true,
-       message: 'ok',
-       user: req.user,
+    res.json({
+        auth: true,
+        message: 'ok',
+        user: req.user,
 
-   })
-});
+    })
+})
 
 authRouter.get('/failure', (req, res) => {
-   res.json({
-       auth: false,
-       message: 'login failed',
-       user: null,
-   })
-});
+    res.json({
+        auth: false,
+        message: 'login failed',
+        user: null,
+    })
+})
 
 
 
