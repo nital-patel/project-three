@@ -15,16 +15,20 @@ class HotelDisplay extends Component{
     }
 
     componentDidMount(){
+        let selection = this.props.hotelSelection
         fetch(
             `/hotel/${this.props.hotelSelection}`
+            //'https://localhost:3001/hotel/1'
         ).then(
         res=>res.json()
         ).then(jsonRes =>{
+            console.log(jsonRes)
             this.setState({
                 hotelData:jsonRes.data,
                 hotelDataLoaded:true
             })
         })
+        console.log(this.props.hotelSelection,'<-----hotel selection')
     }
     hotelParser(obj){
         const results = [];
@@ -43,7 +47,7 @@ class HotelDisplay extends Component{
     renderHotels(){
         if(this.state.hotelDataLoaded){
             
-           return <Hotel hotelName={this.state.hoteltData.name}/>
+           return <Hotel hotelName={this.state.hotelData.name[0]}/>
         }else{
             return <p>loading hotels</p>
         }

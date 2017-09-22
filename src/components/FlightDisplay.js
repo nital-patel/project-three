@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Flight from './Flight';
-import FlightSingle from './FlightSingle';
+//import FlightSingle from './FlightSingle';
 class FlightDisplay extends Component{
     constructor(){
         super();

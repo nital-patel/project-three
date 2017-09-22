@@ -3,8 +3,8 @@ const db = require('../db/config');
 const Hotel = {};
 
 //john work
-Hotel.show = (hotel,id) =>{
-  return db.oneOrNone(
+Hotel.show = (id) =>{
+  return db.manyOrNone(
   `SELECT * FROM Hotels 
   WHERE city_id = $1
   `,[id]
