@@ -2,6 +2,16 @@ const Receipe = require('../models/trip');
 
 const TripController = {};
 
+TripController.create = (req, res) => {
+  Trip.create()
+  .then(trip => {
+    // res.render('Insert Trip Route here')
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  })
+}
+
 
 TripController.edit = (req, res) => {
   Trip.findById(req.params.id)

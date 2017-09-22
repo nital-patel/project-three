@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-
+import React, {Component} from 'react';
+import UserProfile from './UserProfile';
 
 class Login extends Component{
     constructor(){

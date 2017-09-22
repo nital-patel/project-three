@@ -1,15 +1,17 @@
 \c the_wave;
 
-DROP TABLE IF EXISTS Users;
+
 DROP TABLE IF EXISTS Trips;
 DROP TABLE IF EXISTS Flights;
 DROP TABLE IF EXISTS Hotels;
+DROP TABLE IF EXISTS Users;
 
 CREATE TABLE IF NOT EXISTS Users (
   id SERIAL PRIMARY KEY UNIQUE,
   username VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  password_digest TEXT NOT NULL
+  password_digest TEXT NOT NULL,
+  salt TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS cityCodes (
@@ -44,8 +46,7 @@ CREATE TABLE IF NOT EXISTS Hotels (
 
 CREATE TABLE IF NOT EXISTS Trips (
   id SERIAL PRIMARY KEY,
-  trip_name VARCHAR(255) || NULL,
-
+  trip_name VARCHAR(255),
   user_id INTEGER REFERENCES users(id),
   flight_id INTEGER REFERENCES flights(id),
   hotel_id INTEGER REFERENCES hotels(id)

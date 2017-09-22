@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
+
 import './App.css';
 import FlightSearch from './components/FlightSearch';
 import Header from './components/Header'
@@ -12,13 +14,13 @@ class App extends Component {
       <div className="background">  
         <div className="App">
           <Header />
-          <FlightSearch />
-          <Login />
-          <Register />
+          <FlightSearch />s
+          <HotelDisplay />
+
         </div>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
