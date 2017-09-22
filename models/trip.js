@@ -6,10 +6,10 @@ Trip.create = (trip, user_id, flight_id, hotel_id) => {
   return db.one(
     `
       INSERT INTO trips
-      (user_id, flight_id, hotel_id)
-      VALUES ($1, $2, $3) RETURNING *
+      (trip_name, user_id, flight_id, hotel_id)
+      VALUES ($1, $2, $3, $4) RETURNING *
     `,
-    [user.id, flight.id, hotel.id]
+    [trips.trip_name, user.id, flight.id, hotel.id]
   );
 };
 
@@ -18,11 +18,12 @@ Trip.update = (Trips, id) => {
   return db.none(
     `
       UPDATE Trips SET
-      flight_id = $1,
-      hotel_id = $2
-      WHERE id = $3
+      trip_name = $1,
+      flight_id = $2,
+      hotel_id = $3
+      WHERE id = $4
     `,
-    [Trips.flight_id, Trips.hotel_id, id]
+    [trips.trip_name, Trips.flight_id, Trips.hotel_id, id]
   );
 };
 

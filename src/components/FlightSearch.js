@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HotelSearch from './HotelSearch';
 import FlightDisplay from './FlightDisplay';
+import HotelDisplay from './HotelDisplay'
 
 class FlightSearch extends Component{
     constructor(){
@@ -12,7 +13,8 @@ class FlightSearch extends Component{
             depDate:null,
             returnDate:null,
             class:'economy',
-            searchFull:false
+            searchFull:false,
+            hotelCity:null,
         };
         this.checkHandler=this.checkHandler.bind(this);
         this.displayHotel=this.displayHotel.bind(this);
@@ -23,7 +25,7 @@ class FlightSearch extends Component{
     }
     displayHotel(){
         if(this.state.hotelSearchDisplay){
-            return <HotelSearch />
+            return <HotelSearch hotelSelection={this.state.hotelSelection} changeHandler={this.changeHandler}/>
         }
     }
     
@@ -49,6 +51,7 @@ class FlightSearch extends Component{
                 <div>
                     <FlightDisplay name='depart' depAirport={this.state.depAirport} arrAirport={this.state.arrAirport} date={this.state.depDate}/>
                     <FlightDisplay name='return' depAirport={this.state.depAirport} arrAirport={this.state.arrAirport} date={this.state.returnDate}/>
+                    <HotelDisplay hotelSelection={this.state.hotelSelection}/>
                 </div>
             )
         }
@@ -80,7 +83,8 @@ class FlightSearch extends Component{
                     {this.state.arrAirport}/
                     {this.state.depDate}/
                     {this.state.returnDate}/
-                    {this.state.searchFull}
+                    {this.state.searchFull}/
+                    {this.state.hotelSelection}
                 </div>
                 <div className='FlightSearch item'>
                     <form>

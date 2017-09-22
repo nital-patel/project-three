@@ -16,6 +16,7 @@ TripController.edit = (req, res) => {
 
 TripController.update = (req, res) => {
   Trip.update({
+      trip_name: req.body.id,
       flight_id: req.body.id,
       hotel_id: req.body.id
     }, req.params.id)

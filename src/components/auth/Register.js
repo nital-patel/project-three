@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router';
 
+import { withRouter } from 'react-router';
 class Register extends Component{
     constructor(props){
         super(props);

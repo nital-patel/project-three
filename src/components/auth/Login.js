@@ -47,11 +47,10 @@ class Login extends Component{
             <div className='login item section'>
                 <h2>Login</h2>
                 {/* nital, put in an action that is the route you want to call the auth methods on */}
-                <form onSubmit={this.handleFormSubmit}>
+                <form onSubmit={(e) => this.handleFormSubmit(e)}>
 
-                    <input name='username' placeholder='username' value={this.state.username} onChange={this.handleInputChange}></input>
-                    <input name='password' placeholder='password' value={this.state.password} onChange={this.handleInputChange}></input>
-
+                    <input type='text' name='username' placeholder='username' value={this.state.username} onChange={this.handleInputChange}></input>
+                    <input type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleInputChange}></input>
                     <button type='submit'>Login</button>
                 </form>
             </div>
