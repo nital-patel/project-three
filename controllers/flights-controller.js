@@ -3,6 +3,14 @@ const Flight = require('../models/flights');
 const flightController = {};
 
 flightController.create = (req, res) => {
+  console.log(req.body.flightno,
+    req.body.arrtime,
+    req.body.origin,
+    req.body.depa_time,
+    req.body.duration,
+    req.body.destination,
+    req.body.airline,
+    req.body.seatsAvailable,req.user.id)
   Flight.create({
     flightno: req.body.flightno,
     arrtime: req.body.arrtime,
@@ -11,7 +19,7 @@ flightController.create = (req, res) => {
     duration: req.body.duration,
     destination: req.body.destination,
     airline: req.body.airline,
-    totalfare: req.body.totalfare,
+    //totalfare: req.body.totalfare,
     seatsAvailable: req.body.seatsAvailable
   }, req.user.id)
   .then(flight => {

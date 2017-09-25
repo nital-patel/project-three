@@ -45,8 +45,8 @@ class UserProfile extends Component{
 
           <h1>Hi there</h1>
           {/*this.renderUserflight()*/}
-          <button type='add'>add</button>
-        <button type='submit'>delete</button>
+          <button type='submit'>Edit</button>
+        <button type='submit'>Delete</button>
 
         </div>
 

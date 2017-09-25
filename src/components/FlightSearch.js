@@ -99,7 +99,7 @@ class FlightSearch extends Component{
                         </div>
 
                         <div className='section'>
-                            <input type="text" class="form-control inputTxtLarge widgetCalenderTxt" placeholder="Choose Date" onChange={this.changeHandler}/>
+                            
                             <input name='depDate' className='depDate' placeholder='departure date' onChange={this.changeHandler}/>
                             <span>return flight?
                                 <input type='checkbox' />
