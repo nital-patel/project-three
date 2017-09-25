@@ -41,7 +41,7 @@ class Flight extends Component {
                     <input type='hidden' name='depa_time' value={this.props.flightData.onwardflights[0].deptime} />
                     <input type='hidden' name='arrtime' value={this.props.flightData.onwardflights[0].arrtime} />
                     <input type='hidden' name='duration' value={this.props.flightData.onwardflights[0].duration} />
-                    {/* <input type='hidden' name='totalfare' value={this.fareConvert()} /> */}
+                    <input type='hidden' name='totalfare' value='1' />
                     <input type='hidden' name='seats' value={flight.seatsavailable} />
                     <button type='submit'>Add Flight</button>
                 </form>
