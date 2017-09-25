@@ -14,7 +14,7 @@ class FlightSearch extends Component{
             returnDate:null,
             class:'economy',
             searchFull:false,
-            hotelCity:null,
+            hotelSelection:''
         };
         this.checkHandler=this.checkHandler.bind(this);
         this.displayHotel=this.displayHotel.bind(this);

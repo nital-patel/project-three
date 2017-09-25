@@ -29,6 +29,7 @@ class HotelDisplay extends Component{
             })
         })
         console.log(this.props.hotelSelection,'<-----hotel selection')
+
     }
     hotelParser(obj){
         const results = [];
