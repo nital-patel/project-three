@@ -3,6 +3,11 @@ const tripController = require('../controllers/trip-controller');
 const tripRouter = express.Router();
 
 
-tripRouter.get('/:id/edit', tripController.edit)
+tripRouter.get('/:id', tripController.findById);
 
-tripRouter.put('/:id',  tripController.update)
+tripRouter.get('/:id/edit', tripController.edit);
+
+tripRouter.put('/:id',  tripController.update);
+
+module.exports = tripRouter;
+

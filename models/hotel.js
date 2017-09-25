@@ -2,11 +2,21 @@ const db = require('../db/config');
 
 const Hotel = {};
 
+//john work
+Hotel.show = (id) =>{
+  return db.manyOrNone(
+  `SELECT * FROM Hotels 
+  WHERE city_id = $1
+  `,[id]
+  );
+};
+//
+
 Hotel.update = (hotel, id) => {
 
   return db.none(`
 
-    UPDATE hotel SET
+    UPDATE Hotels SET
     name = $1,
     rating = $2,
     city = $3,
@@ -25,4 +35,4 @@ Hotel.destroy = id => {
     [id]
   );
 };
-module.exports = Flight;
+module.exports = Hotel;
