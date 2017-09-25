@@ -3,17 +3,29 @@ const Flight = require('../models/flights');
 const flightController = {};
 
 flightController.create = (req, res) => {
-  Flight.create({flightno: req.body.flightno,
+  console.log(
+    req.body.flightno,
+    req.body.arrtime,
+    req.body.origin,
+    req.body.depa_time,
+    req.body.duration,
+    req.body.destination,
+    req.body.airline,
+    req.body.seatsAvailable,req.user.id)
+    
+  Flight.create({
+    flightno: req.body.flightno,
     arrtime: req.body.arrtime,
     origin: req.body.origin,
     depa_time: req.body.depa_time,
     duration: req.body.duration,
     destination: req.body.destination,
     airline: req.body.airline,
-    totalfare: req.body.totalfare,
-    seatsAvailable: req.body.seatsAvailable}, req.params.id)
+    //totalfare: req.body.totalfare,
+    seatsAvailable: req.body.seatsAvailable
+  }) 
   .then(flight => {
-
+    res.redirect(`/flight/${flight.id}`);
   })
   .catch(err => {
     res.status(400).json(err);
