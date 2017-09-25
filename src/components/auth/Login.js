@@ -11,7 +11,6 @@ class Login extends Component{
         this.state={
             username: '',
             password: '',
-            conformpassword: '',
             fireRedirect: false,
             auth: false
         };
@@ -32,7 +31,7 @@ class Login extends Component{
 
 
           axios
-              .post('http://localhost:3000/auth/login', {
+              .post('/auth/login', {
                   username: this.state.username,
                   password: this.state.password,
               })
@@ -59,14 +58,15 @@ class Login extends Component{
         render(){
           console.log(this.state)
         return(
-            <div className='login item section'>
-                <h2>Login</h2>
+            <div className='container'>
+                <h1 className="login">Login</h1>
                 {/* nital, put in an action that is the route you want to call the auth methods on */}
-                <form onSubmit={(e) => this.handleFormSubmit(e)}>
+                <form className="login-form" onSubmit={(e) => this.handleFormSubmit(e)}>
 
-                    <input type='text' name='username' placeholder='username' value={this.state.username} onChange={this.handleInputChange}></input>
-                    <input type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleInputChange}></input>
-                    <button type='submit'>Login</button>
+
+                    <input className="form-input"  type='text' name='username' placeholder='username' value={this.state.username} onChange={this.handleInputChange}></input>
+                    <input className="form-input" type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleInputChange}></input>
+                    <button className="btn" type='submit'>Login</button>
                 </form>
 
             </div>

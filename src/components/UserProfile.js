@@ -12,9 +12,9 @@ class UserProfile extends Component{
   }
 
   componentDidMount(){
-    axios.get('http://localhost:3000/trip')
+    axios.get('/trip')
       .then(res => {
-        console.log('got something back: ', res)
+        console.log('got something back: ', res);
         this.setState({
           tripData: res.data.data,
         })
@@ -33,7 +33,7 @@ class UserProfile extends Component{
     return(
         <div className="userflight-list">
           <h1>Hi there</h1>
-          {/*this.renderUserflight()*/}
+            {/*{this.renderUserflight()}*/}
           <button type='add'>add</button>
         <button type='submit'>delete</button>
         </div>
