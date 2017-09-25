@@ -1,35 +1,54 @@
 import React, {Component} from 'react';
 import Hotel from './Hotel';
 // import flatten from 'flat';
+//import axios from 'axios';
+import hotelData from './hotelData'
 
 class HotelDisplay extends Component{
     constructor(){
         super();
         this.state={
-            hoteltData:null,
-            hoteltDataLoaded:false
+            hotelData:null,
+            hotelDataLoaded:false
         }
         //bindings
         this.hotelNameFinder = this.hotelNameFinder.bind(this)
         this.hotelParser = this.hotelParser.bind(this)
+        this.hotelFaker = this.hotelFaker.bind(this);
     }
-
-    componentDidMount(){
-        let selection = this.props.hotelSelection
-        fetch(
-            `/hotel/${this.props.hotelSelection}`
-            //'https://localhost:3001/hotel/1'
-        ).then(
-        res=>res.json()
-        ).then(jsonRes =>{
-            console.log(jsonRes)
-            this.setState({
-                hotelData:jsonRes.data,
-                hotelDataLoaded:true
-            })
-        })
-        console.log(this.props.hotelSelection,'<-----hotel selection')
+    hotelFaker(){
+        this.setState({
+            hotelData:hotelData
+        });
     }
+    // axios <=====
+    // componentDidMount(){
+    //     let selection = this.props.hotelSelection
+    //     axios.get( `/hotel/${this.props.hotelSelection}`)
+    //     .then(res => {
+    //       console.log('got something back: ', res)
+    //       this.setState({
+    //         tripData: res.data.data,
+    //       })
+    //     })
+    // }
+    // fetch <======
+    // componentDidMount(){
+    //     let selection = this.props.hotelSelection
+    //     fetch(
+    //         `/hotel/${this.props.hotelSelection}`
+    //         // 'https://localhost:3000/hotel/1'
+    //     ).then(
+    //     res=>res.json()
+    //     ).then(jsonRes =>{
+    //         console.log(jsonRes)
+    //         this.setState({
+    //             hotelData:jsonRes.data,
+    //             hotelDataLoaded:true
+    //         })
+    //     })
+    //     console.log(this.props.hotelSelection,'<-----hotel selection')
+    // }
     hotelParser(obj){
         const results = [];
         for (let key in obj){
@@ -48,9 +67,11 @@ class HotelDisplay extends Component{
         if(this.state.hotelDataLoaded){
             const hotelData = this.state.hotelData
            return (
-           <Hotel hotelData={hotelData[0]}/>
-           <Hotel hotelData={hotelData[1]}/>
-           <Hotel hotelData={hotelData[2]}/>
+            <div>
+                <Hotel hotelData={hotelData[0]}/>
+                <Hotel hotelData={hotelData[1]}/>
+                <Hotel hotelData={hotelData[2]}/>
+            </div>
             )
         }else{
             return <p>loading hotels</p>
@@ -67,7 +88,7 @@ class HotelDisplay extends Component{
 
 export default HotelDisplay;
 
-  //`http://developer.goibibo.com/api/voyager/get_hotels_by_cityid/?app_id=d09ac5c5&app_key=727ff3f0af2bda5a3443c6977cdea544&city_id=6771549831164675055`
+//`http://developer.goibibo.com/api/voyager/get_hotels_by_cityid/?app_id=d09ac5c5&app_key=727ff3f0af2bda5a3443c6977cdea544&city_id=6771549831164675055`
 
 //   UPDATE hotel SET
 //   name = $1,

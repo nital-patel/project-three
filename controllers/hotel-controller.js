@@ -19,7 +19,7 @@ hotelController.show = (req,res)=>{
   console.log('this is the id in the show controller',req.params.id)
   Hotel.show(req.params.id)
   .then(hotel =>{
-    res.status('/:id').send({hotel:hotel})
+    res.status('/:id').send({hotel: hotel})
   }).catch(err=>{
     res.status(400).json(err);
   })
