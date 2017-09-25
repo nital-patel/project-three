@@ -30,9 +30,7 @@ origin VARCHAR(255) NOT NULL,
 depa_time VARCHAR(255) NOT NULL,
 duration VARCHAR(255) NOT NULL,
 destination VARCHAR(255) NOT NULL,
-airline VARCHAR(255) NOT NULL,
-totalfare char(4) NOT NULL,
-seatsAvailable char(1) NOT NULL
+airline VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Hotels (

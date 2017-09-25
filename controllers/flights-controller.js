@@ -10,8 +10,7 @@ flightController.create = (req, res) => {
     req.body.depa_time,
     req.body.duration,
     req.body.destination,
-    req.body.airline,
-    req.body.seatsAvailable);
+    req.body.airline);
   Flight.create({
     flightno: req.body.flightno,
     arrtime: req.body.arrtime,
@@ -19,9 +18,7 @@ flightController.create = (req, res) => {
     depa_time: req.body.depa_time,
     duration: req.body.duration,
     destination: req.body.destination,
-    airline: req.body.airline,
-    totalfare: req.body.totalfare,
-    seatsAvailable: req.body.seatsAvailable
+    airline: req.body.airline
   }) 
   .then((flight) => {
     res.json({flight: flight});
