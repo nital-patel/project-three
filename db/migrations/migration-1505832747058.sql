@@ -31,7 +31,7 @@ depa_time VARCHAR(255) NOT NULL,
 duration VARCHAR(255) NOT NULL,
 destination VARCHAR(255) NOT NULL,
 airline VARCHAR(255) NOT NULL,
-totalfare char(4) NOT NULL,
+totalfare varchar(4) NOT NULL,
 seatsAvailable char(1) NOT NULL
 );
 
@@ -51,4 +51,12 @@ CREATE TABLE IF NOT EXISTS Trips (
   flight_id INTEGER REFERENCES flights(id),
   hotel_id INTEGER REFERENCES hotels(id)
 );
+
+
+
+
+
+
+
+
 

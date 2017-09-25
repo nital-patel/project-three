@@ -1,5 +1,4 @@
 import React from 'react';
-import UserProfile from './components/UserProfile'
 import { Router, Route, Link } from 'react-router-dom';
 import App from './App';
 import Login from './components/auth/Login';

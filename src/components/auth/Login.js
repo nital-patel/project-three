@@ -53,7 +53,7 @@ class Login extends Component{
       }
 
       handleRedirect(){
-        if (this.state.auth){
+        if (!this.state.auth){
           return this.props.history.push('/UserProfile')
         }
       }

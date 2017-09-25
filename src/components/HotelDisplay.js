@@ -37,20 +37,19 @@ class HotelDisplay extends Component{
         }
         return results
       }
-      
+
     hotelNameFinder(arr){
         for(let i = 0; i <arr.length; i++){
           return arr[i].hotel_geo_node.name;
         }
     }
-    
+
     renderHotels(){
         if(this.state.hotelDataLoaded){
             const hotelData = this.state.hotelData
            return (
            <Hotel hotelData={hotelData[0]}/>
-           <Hotel hotelData={hotelData[1]}/>
-           <Hotel hotelData={hotelData[2]}/>
+
             )
         }else{
             return <p>loading hotels</p>
