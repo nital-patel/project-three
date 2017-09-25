@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-
 import './App.css';
 import FlightSearch from './components/FlightSearch';
 import Header from './components/Header'

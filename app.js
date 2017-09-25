@@ -6,8 +6,10 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const path = require('path');
-
+const fetch = require('isomorphic-fetch');
 const app = express();
+const pgpromise = require('pg-promise');
+
 
 
 require('dotenv').config();
@@ -19,7 +21,7 @@ app.use(methodOverride('_method'));
 const PORT = process.env.PORT || 3000;
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({
     secret: process.env.SECRET_KEY,
@@ -28,6 +30,8 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 
 
 const tripRouter = require('./routes/trip-routes');
@@ -46,7 +50,7 @@ const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
 
 app.use(express.static('public'));
-
+app.use(fetch);
 if (process.env.NODE_ENV) {
     const webpackMiddleware = require("webpack-dev-middleware");
     const webpack = require('webpack');
@@ -68,7 +72,7 @@ if (process.env.NODE_ENV) {
 app.get('/*', function(req, res) {
     console.log('Sending index.html');
 
-    res.sendFile(path.join(__dirname, 'public', 'page.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
