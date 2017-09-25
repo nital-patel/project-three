@@ -12,12 +12,10 @@ class UserProfile extends Component{
   }
 
   componentDidMount(){
-    axios.get('http://localhost:3000/user')
+
+    axios.get('/trip')
       .then(res => {
-
-        console.log(res)
-
-        console.log('got something back: ', res)
+        console.log('got something back: ', res);
 
         this.setState({
           tripData: res.data.data,
@@ -44,10 +42,9 @@ class UserProfile extends Component{
           {this.renderUserflight()}
 
           <h1>Hi there</h1>
-          {/*this.renderUserflight()*/}
-          <button type='submit'>Edit</button>
-        <button type='submit'>Delete</button>
-
+            {/*{this.renderUserflight()}*/}
+          <button type='add'>add</button>
+        <button type='submit'>delete</button>
         </div>
 
     )
