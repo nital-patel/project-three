@@ -20,7 +20,7 @@ flightController.create = (req, res) => {
     destination: req.body.destination,
     airline: req.body.airline,
     //totalfare: req.body.totalfare,
-    seatsAvailable: req.body.seatsAvailable
+    //seatsAvailable: req.body.seatsAvailable
   }, req.user.id)
   .then(flight => {
     // res.render('hotel search page')
