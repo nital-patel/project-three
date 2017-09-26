@@ -16,7 +16,17 @@ TripController.create = (req, res) => {
     console.log(err);
   })
 }
-
+TripController.show = (req,res)=>{
+  console.log('=======> this is trips show', req.params.id)
+  Trip.show(req.params.id)
+  .then(trip =>{
+    res.json({trip:trip})
+  })
+  .catch(err => {
+    res.status(400).json(err);
+    console.log(err);
+  })
+};
 
 TripController.edit = (req, res) => {
   Trip.findById(req.params.id)

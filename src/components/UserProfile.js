@@ -12,7 +12,7 @@ class UserProfile extends Component{
   }
 
   componentDidMount(){
-    axios.get('/trip')
+    axios.get(`/trip/${this.props.user}`)
       .then(res => {
         console.log('got something back: ', res);
         this.setState({
