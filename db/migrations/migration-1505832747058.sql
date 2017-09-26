@@ -11,35 +11,35 @@ CREATE TABLE IF NOT EXISTS Users (
   username VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password_digest TEXT NOT NULL,
-  salt TEXT NOT NULL
+  salt TEXT NOT NULL 
 );
 
 CREATE TABLE IF NOT EXISTS cityCodes (
   id SERIAL PRIMARY KEY UNIQUE,
-  city_name TEXT NOT NULL,
-  city_id char(19) NOT NULL,
-  domestics char(1) NOT NULL
+  city_name TEXT ,
+  city_id char(19) ,
+  domestics char(1) 
 );
 
 CREATE TABLE IF NOT EXISTS Flights (
 
 id SERIAL PRIMARY KEY UNIQUE,
-flightno INTEGER NOT NULL,
-arrtime VARCHAR(255) NOT NULL,
-origin VARCHAR(255) NOT NULL,
-depa_time VARCHAR(255) NOT NULL,
-duration VARCHAR(255) NOT NULL,
-destination VARCHAR(255) NOT NULL,
-airline VARCHAR(255) NOT NULL
+flightno INTEGER ,
+arrtime VARCHAR(255) ,
+origin VARCHAR(255) ,
+depa_time VARCHAR(255) ,
+duration VARCHAR(255) ,
+destination VARCHAR(255) ,
+airline VARCHAR(255) 
 );
 
 CREATE TABLE IF NOT EXISTS Hotels (
 
   id SERIAL PRIMARY KEY UNIQUE,
-  name VARCHAR(255) NOT NULL,
-  rating DECIMAL(2,1) NOT NULL,
-  city VARCHAR(255) NOT NULL,
-  city_id INTEGER NOT NULL
+  name VARCHAR(255) ,
+  rating DECIMAL(2,1) ,
+  city VARCHAR(255) ,
+  city_id INTEGER 
   );
 
 CREATE TABLE IF NOT EXISTS Trips (

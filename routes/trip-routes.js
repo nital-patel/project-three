@@ -6,6 +6,7 @@ const authHelper = require('../services/auth/auth-helper');
 
 tripRouter.post('/', tripController.create);
 
+tripRouter.delete('/:id', tripController.destroy);
 
 
 tripRouter.get('/:id', tripController.show);

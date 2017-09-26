@@ -12,10 +12,13 @@ Trip.create = (trip, flight, hotel, user) => {
     [trip.trip_name, trip.flight_id, trip.hotel_id, trip.user_id]
   );
 };
+
 Trip.show = (user) =>{
   return db.manyOrNone(
     `
-    select * from hotels join trips on hotels.id = hotel_id join flights on flight_id = flightno where user_id = $1
+    SELECT * FROM trips JOIN hotels on hotels.id = hotel_id join flights ON flights.id = flight_id where user_id = $1
+    ;
+    
     `,[user]
   );
 };
@@ -43,11 +46,11 @@ Trip.destroy = id => {
   );
 };
 
-Trip.findById = id => {
-  return db.oneOrNone (`
+Trip.findById = user => {
+  return db.query (`
     SELECT * FROM trips
     WHERE user_id = $1
-    `, [id]);
+    `, [user]);
 }
 
 module.exports = Trip;

@@ -59,6 +59,13 @@ flightController.update = (req,res) => {
 
 };
 
+flightController.recent=(req,res)=>{
+  Flight.recent()
+  .then((res) => {
+    res.json({flight : res})
+  })
+}
+
 flightController.destroy = (req, res) => {
 
   Flight.destroy(req.params.id)
