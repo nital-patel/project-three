@@ -6,10 +6,10 @@ Flight.create = (flight, user_id) => {
   return db.one(
     `
       INSERT INTO flights
-      (flightno, arrtime, origin, depa_time, duration, destination, airline, totalfare, seatsavailable)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *
+      (flightno, arrtime, origin, depa_time, duration, destination, airline)
+      VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *
     `,
-    [flight.flightno, flight.arrtime, flight.origin, flight.depa_time, flight.duration, flight.destination, flight.airline, flight.totalfare, flight.seatsavailable]
+    [flight.flightno, flight.arrtime, flight.origin, flight.depa_time, flight.duration, flight.destination, flight.airline]
   );
 };
 
@@ -25,11 +25,10 @@ Flight.update = (flight, id) => {
     duration = $5,
     destination = $6,
     airline = $7,
-    seatsAvailable = $8
-    WHERE id = $9
+    WHERE id = $8
     `,
-    [flight.flightno, flight.arrtime, flight.origin, flight.depa_time, flight.duration, flight.destination, flight.airline, flight.seatsAvailable,id]
-    );
+    [flight.flightno, flight.arrtime, flight.origin, flight.depa_time, flight.duration, flight.destination, flight.airline]
+  );
 };
 
 Flight.destroy = id => {

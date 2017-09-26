@@ -3,14 +3,14 @@ const Flight = require('../models/flights');
 const flightController = {};
 
 flightController.create = (req, res) => {
-  console.log(req.body.flightno,
-    req.body.arrtime,
+
+   console.log(req.body.arrtime,
     req.body.origin,
     req.body.depa_time,
     req.body.duration,
     req.body.destination,
-    req.body.airline,
-    req.body.seatsAvailable,req.user.id);
+    req.body.airline);
+
   Flight.create({
     flightno: req.body.flightno,
     arrtime: req.body.arrtime,
@@ -26,9 +26,8 @@ flightController.create = (req, res) => {
     // res.render('hotel search page')
    // console.log('Put hotel search page in the render above')
    res.redirect(`/flight/${flight.id}`);
-
   })
-  .catch(err => {
+  .catch((err) => {
     res.status(400).json(err);
   })
 }
