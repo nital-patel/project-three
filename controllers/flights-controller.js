@@ -10,7 +10,7 @@ flightController.create = (req, res) => {
     req.body.duration,
     req.body.destination,
     req.body.airline,
-    req.body.seatsAvailable,req.user.id)
+    req.body.seatsAvailable,req.user.id);
   Flight.create({
     flightno: req.body.flightno,
     arrtime: req.body.arrtime,
