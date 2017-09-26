@@ -45,8 +45,8 @@ CREATE TABLE IF NOT EXISTS Hotels (
 CREATE TABLE IF NOT EXISTS Trips (
   id SERIAL PRIMARY KEY,
   trip_name VARCHAR(255),
-  user_id INTEGER REFERENCES users(id),
-  flight_id INTEGER REFERENCES flights(id),
-  hotel_id INTEGER REFERENCES hotels(id)
+  user_id INTEGER,
+  flight_id INTEGER,
+  hotel_id INTEGER
 );
 

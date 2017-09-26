@@ -1,14 +1,19 @@
-const Receipe = require('../models/trip');
-
+const Trip = require('../models/trip');
 const TripController = {};
 
 TripController.create = (req, res) => {
-  Trip.create()
-  .then(trip => {
-    // res.render('Insert Trip Route here')
+  console.log(req.body.tripName)
+  Trip.create({
+    trip_name: req.body.tripName,
+    flight_id: req.body.flightno,
+    hotel_id: req.body.hotelId,
+    user_id: req.body.userId
+  }).then(trip => {
+    res.json({trip:trip})
   })
   .catch(err => {
     res.status(400).json(err);
+    console.log(err);
   })
 }
 

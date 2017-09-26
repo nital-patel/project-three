@@ -2,14 +2,14 @@ const db = require('../db/config');
 
 const Trip = {};
 
-Trip.create = (trip, user_id, flight_id, hotel_id) => {
+Trip.create = (trip, user_id, flight, hotel) => {
   return db.one(
     `
-      INSERT INTO trips
+      INSERT INTO Trips
       (trip_name, user_id, flight_id, hotel_id)
       VALUES ($1, $2, $3, $4) RETURNING *
     `,
-    [trips.trip_name, user.id, flight.id, hotel.id]
+    [trip.trip_name, trip.user_id, trip.flight_id, trip.hotel_id]
   );
 };
 
@@ -23,7 +23,7 @@ Trip.update = (Trips, id) => {
       hotel_id = $3
       WHERE id = $4
     `,
-    [trips.trip_name, Trips.flight_id, Trips.hotel_id, id]
+    [Trips.trip_name, Trips.flight_id, Trips.hotel_id, id]
   );
 };
 
